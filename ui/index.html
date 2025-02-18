@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMH/Tankanzeige made by Jason</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #hud {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            color: white;
+            text-align: right;
+            display: none; 
+        }
+
+        #hud span {
+            display: block;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        #speed {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        #tank {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        #progressBar {
+            width: 220px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        #progress {
+            height: 20px;
+            background: linear-gradient(to right, #545ecf, #cc6ed9);
+            width: 100%;
+            transition: width 0.5s ease;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hud">
+        <span id="speed">KM/H: 0</span>
+        <span id="tank">TANK: 62%</span>
+        <div id="progressBar">
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('message', function(event) {
+            var data = event.data;
+
+            if (data.display === true) {
+                document.getElementById("hud").style.display = "block";
+
+                document.getElementById("speed").innerHTML = "KM/H: " + data.speed;
+
+                document.getElementById("tank").innerHTML = "TANK: " + data.fuel + "%";
+
+                var progressBar = document.getElementById("progress");
+                progressBar.style.width = data.fuel + "%";
+            } else {
+                document.getElementById("hud").style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

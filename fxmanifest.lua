@@ -7,9 +7,14 @@ description 'Simple KM/H und Tankanzeige'
 ui_page 'ui/index.html'
 
 client_scripts {
-    'client/main.lua'
+    'client/client.lua',
+    'Shared.lua'
 }
 
 files {
     'ui/index.html'
+}
+
+dependencies {
+    'ox_lib'
 }

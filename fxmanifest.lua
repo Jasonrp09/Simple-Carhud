@@ -8,7 +8,7 @@ ui_page 'ui/index.html'
 
 client_scripts {
     'client/client.lua',
-    'shared.lua'
+    'Shared.lua'
 }
 
 files {

@@ -49,7 +49,7 @@
 
         #progress {
             height: 20px;
-            background: linear-gradient(to right, #545ecf, #cc6ed9); /* Farbverlauf */
+            background: linear-gradient(to right, #545ecf, #cc6ed9);
             width: 100%;
             transition: width 0.5s ease;
             border-radius: 8px;
@@ -70,20 +70,15 @@
             var data = event.data;
 
             if (data.display === true) {
-                // HUD anzeigen
                 document.getElementById("hud").style.display = "block";
 
-                // Update speed display
                 document.getElementById("speed").innerHTML = "KM/H: " + data.speed;
 
-                // Update tank display
                 document.getElementById("tank").innerHTML = "TANK: " + data.fuel + "%";
 
-                // Update tank progress bar width
                 var progressBar = document.getElementById("progress");
                 progressBar.style.width = data.fuel + "%";
             } else {
-                // HUD ausblenden
                 document.getElementById("hud").style.display = "none";
             }
         });

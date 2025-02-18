@@ -11,6 +11,7 @@ CreateThread(function()
             local vehicle = GetVehiclePedIsIn(playerPed, false)
             local speed = GetEntitySpeed(vehicle) * 3.6
             local fuel = GetVehicleFuelLevel(vehicle)
+            DebugPrint(vehicle, speed, fuel)
 
             SendNUIMessage({
                 display = true,
@@ -24,3 +25,10 @@ CreateThread(function()
         end
     end
 end)
+
+
+function DebugPrint(msg)
+    if Shared.debug then
+        string.format("[%s] >> %a", GetCurrentResourceName(), msg)
+    end
+end

@@ -7,7 +7,7 @@ description 'Simple KM/H und Tankanzeige'
 ui_page 'ui/index.html'
 
 client_scripts {
-    'client/main.lua'
+    'client/client.lua'
 }
 
 files {

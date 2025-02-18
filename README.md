@@ -1,10 +1,11 @@
-# Simple-Carhud
-Das ist ein simples Carhud mit Tank und Km/h anzeige für Fivem ESX 
+# Simple-Carhud  
+This is a simple car HUD with fuel and km/h display for FiveM ESX.  
 
-# Discord: https://discord.gg/yykPEwMQZu
+# Discord: [Join Here](https://discord.gg/yykPEwMQZu)  
 
-Hello my name is Jason and this is my first Release its a simple Carhud with good Performance
+Hello, my name is Jason, and this is my first release! It's a simple car HUD with good performance.  
 
-Under J_carhud > client > main.lua > line 16 > you can make the hud smoother
+To adjust the HUD smoothness, go to:  
+`J_carhud > client > main.lua > line 16`  
 
-Join for Support: https://discord.gg/2gra7yUTmX
+For support, join: [Support Discord](https://discord.gg/2gra7yUTmX)  

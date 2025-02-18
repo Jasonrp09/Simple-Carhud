@@ -5,7 +5,7 @@ CreateThread(function()
     while true do
         Wait(500)
         
-        local playerPed = GetPlayerPedId()
+        local playerPed = cache.ped
         
         if IsPedInAnyVehicle(playerPed, false) then
             local vehicle = GetVehiclePedIsIn(playerPed, false)
@@ -15,8 +15,8 @@ CreateThread(function()
 
             SendNUIMessage({
                 display = true,
-                speed = math.floor(speed),
-                fuel = math.floor(fuel)
+                speed = lib.math.floor(speed),
+                fuel = lib.math.floor(fuel)
             })
         else
             SendNUIMessage({
@@ -26,9 +26,8 @@ CreateThread(function()
     end
 end)
 
-
-function DebugPrint(msg)
+function DebugPrint(...)
     if Shared.debug then
-        string.format("[%s] >> %a", GetCurrentResourceName(), msg)
+        print(string.format("[%s] >> %s", GetCurrentResourceName(), table.concat({...}, " ")))
     end
 end
